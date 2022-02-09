@@ -7,7 +7,6 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
 fi
-# My Telegram : https://t.me/Akbar218
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -20,40 +19,31 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Link Hosting Kalian Untuk Ssh Vpn
-akbarvpn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/ssh"
+akbarvpn="raw.githubusercontent.com/tcatvpn/Script/tree/main/ssh"
 # Link Hosting Kalian Untuk Sstp
-akbarvpnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/sstp"
+akbarvpnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/sstp"
 # Link Hosting Kalian Untuk Ssr
-akbarvpnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/ssr"
+akbarvpnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
-akbarvpnnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/shadowsocks"
+akbarvpnnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-akbarvpnnnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/wireguard"
+akbarvpnnnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/wireguard"
 # Link Hosting Kalian Untuk Xray
-akbarvpnnnnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/xray"
+akbarvpnnnnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/xray"
 # Link Hosting Kalian Untuk Ipsec
-akbarvpnnnnnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/ipsec"
+akbarvpnnnnnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/ipsec"
 # Link Hosting Kalian Untuk Backup
-akbarvpnnnnnnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/backup"
+akbarvpnnnnnnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/backup"
 # Link Hosting Kalian Untuk Websocket
-akbarvpnnnnnnnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/websocket"
+akbarvpnnnnnnnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/websocket"
 # Link Hosting Kalian Untuk Ohp
-akbarvpnnnnnnnnnn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/ohp"
+akbarvpnnnnnnnnnn="raw.githubusercontent.com/tcatvpn/Script/tree/main/ohp"
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(wget -qO- ipinfo.io/ip);
-if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook : https://m.facebook.com/lis.tio.718"
-echo -e "${NC}${LIGHT}WhatsApp : 081545854516"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/Akbar218"
-exit 0
-fi
+
 rm -f setup.sh
 clear
 if [ -f "/etc/xray/domain" ]; then
@@ -63,6 +53,8 @@ fi
 mkdir /var/lib/akbarstorevpn;
 echo "IP=" >> /var/lib/akbarstorevpn/ipvps.conf
 wget https://${akbarvpn}/cf.sh && chmod +x cf.sh && ./cf.sh
+#install v2ray
+wget https://${akbarvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
 wget https://${akbarvpn}/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 wget https://${akbarvpnn}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
@@ -71,8 +63,6 @@ wget https://${akbarvpnnn}/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
 wget https://${akbarvpnnnn}/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
 wget https://${akbarvpnnnnn}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
-#install v2ray
-wget https://${akbarvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install L2TP
 wget https://${akbarvpnnnnnnn}/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
 wget https://${akbarvpnnnnnnnn}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
@@ -111,9 +101,8 @@ chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
 echo " "
-echo "Installation has been completed!!"
-echo " "
-echo "=================================-Akbar Maulana Project-===========================" | tee -a log-install.txt
+echo "Installation has been completed!!"echo " "
+echo "============================================================================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "----------------------------------------------------------------------------" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
@@ -159,15 +148,6 @@ echo "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   - Dev/Main                : Horas Marolop Amsal Siregar"  | tee -a log-install.txt
-echo "   - Recode                  : Akbar Maulana" | tee -a log-install.txt
-echo "   - Telegram                : T.me/Akbar218"  | tee -a log-install.txt
-echo "   - Instagram               : ~"  | tee -a log-install.txt
-echo "   - Whatsapp                : 081545854516"  | tee -a log-install.txt
-echo "   - Facebook                : https://m.facebook.com/lis.tio.718" | tee -a log-install.txt
-echo "----------------------Script Created By Akbar Maulana Project----------------------" | tee -a log-install.txt
-echo ""
 echo " Reboot 15 Sec"
 sleep 15
 rm -f setup.sh
